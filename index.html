@@ -40,23 +40,26 @@
             </ul>
         </div>
     </div>
-    <div class="flex flex-col justify-center items-center gap-8 grow pb-48">
+    <div class="flex flex-col justify-center items-center gap-8 grow w-full px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-24 max-w-4xl mx-auto">
         <!-- Content -->
-        <h2 class="text-2xl bold text-center max-w-3/4 lg:max-w-1/2">
+        <h2 class="text-xl sm:text-2xl font-bold text-center max-w-full md:max-w-2xl text-base-content/90 leading-relaxed">
             High-performance, hardware-accelerated Python and R packages for normalizing count
             matrices from single-cell RNA-seq experiments
         </h2>
-        <div class="flex gap-4 items-center justify-center">
-            <button class="btn btn-xl btn-neutral">Docs for Python library <i class="bi bi-box-arrow-up-right"></i>
+        <div class="flex flex-col sm:flex-row gap-4 items-center justify-center w-full max-w-md sm:max-w-none">
+            <button class="btn btn-md sm:btn-lg btn-neutral w-full sm:w-auto gap-2">
+                Docs for Python library <i class="bi bi-box-arrow-up-right"></i>
             </button>
-            <button class="btn btn-xl btn-neutral">Docs for R package <i class="bi bi-box-arrow-up-right"></i></button>
+            <button class="btn btn-md sm:btn-lg btn-neutral w-full sm:w-auto gap-2">
+                Docs for R package <i class="bi bi-box-arrow-up-right"></i>
+            </button>
         </div>
 
-        <div class="tabs tabs-border w-full max-w-3xl">
+        <div class="tabs tabs-border w-full max-w-3xl mt-4">
             <input type="radio" name="my_tabs_2" class="tab" aria-label="Python" checked="checked" />
             <div class="tab-content">
                 <pre style="font-family: monospace;"
-                    class="w-full h-56 whitespace-pre bg-base-200 rounded-box p-4 overflow-x-auto"># Install with CUDA support:
+                    class="w-full h-56 whitespace-pre bg-base-200 rounded-box p-4 overflow-x-auto text-xs sm:text-sm font-mono leading-relaxed"># Install with CUDA support:
 pip install "scintilla[cuda] @ git+https://github.com/saketlab/scintilla#subdirectory=python"
 
 # Or install for Apple Silicon (MLX):
@@ -68,7 +71,7 @@ pip install git+https://github.com/saketlab/scintilla#subdirectory=python</pre>
             <input type="radio" name="my_tabs_2" class="tab" aria-label="R" />
             <div class="tab-content">
                 <pre style="font-family: monospace;"
-                    class="w-full h-56 whitespace-pre bg-base-200 rounded-box p-4 overflow-x-auto"># Install devtools if not already installed
+                    class="w-full h-56 whitespace-pre bg-base-200 rounded-box p-4 overflow-x-auto text-xs sm:text-sm font-mono leading-relaxed"># Install devtools if not already installed
 if (!requireNamespace("devtools", quietly = TRUE)) install.packages("devtools")
 
 # Install the R package
