@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dracula">
 
 <head>
     <meta charset="UTF-8">
@@ -13,6 +13,8 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
@@ -26,7 +28,10 @@
     <!-- Navbar -->
     <div class="navbar bg-base-100 shadow-sm">
         <div class="flex-1">
-            <a class="btn btn-ghost text-xl">scintilla</a>
+            <a class="btn btn-ghost text-xl gap-2">
+                <img src="assets/spark.svg" alt="Scintilla logo" class="w-6 h-6" />
+                Scintilla
+            </a>
         </div>
         <div class="flex items-center">
             <ul class="menu menu-horizontal px-1">
@@ -42,10 +47,36 @@
             matrices from single-cell RNA-seq experiments
         </h2>
         <div class="flex gap-4 items-center justify-center">
-            <button class="btn btn-xl">Python library <i class="bi bi-box-arrow-up-right"></i>
+            <button class="btn btn-xl btn-neutral">Docs for Python library <i class="bi bi-box-arrow-up-right"></i>
             </button>
-            <button class="btn btn-xl">R package <i class="bi bi-box-arrow-up-right"></i></button>
+            <button class="btn btn-xl btn-neutral">Docs for R package <i class="bi bi-box-arrow-up-right"></i></button>
         </div>
+
+        <div class="tabs tabs-border w-full max-w-3xl">
+            <input type="radio" name="my_tabs_2" class="tab" aria-label="Python" checked="checked" />
+            <div class="tab-content">
+                <pre style="font-family: monospace;"
+                    class="w-full h-56 whitespace-pre bg-base-200 rounded-box p-4 overflow-x-auto"># Install with CUDA support:
+pip install "scintilla[cuda] @ git+https://github.com/saketlab/scintilla#subdirectory=python"
+
+# Or install for Apple Silicon (MLX):
+pip install "scintilla[mlx] @ git+https://github.com/saketlab/scintilla#subdirectory=python"
+
+# Or CPU-only:
+pip install git+https://github.com/saketlab/scintilla#subdirectory=python</pre>
+            </div>
+            <input type="radio" name="my_tabs_2" class="tab" aria-label="R" />
+            <div class="tab-content">
+                <pre style="font-family: monospace;"
+                    class="w-full h-56 whitespace-pre bg-base-200 rounded-box p-4 overflow-x-auto"># Install devtools if not already installed
+if (!requireNamespace("devtools", quietly = TRUE)) install.packages("devtools")
+
+# Install the R package
+devtools::install_github("saketlab/scintilla", subdir = "R")</pre>
+            </div>
+
+        </div>
+
     </div>
     <!-- Footer -->
     <footer class="footer sm:footer-horizontal bg-neutral text-neutral-content items-center p-4">
