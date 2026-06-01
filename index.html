@@ -26,7 +26,7 @@
 
 <body class="flex flex-col min-h-screen">
     <!-- Navbar -->
-    <div class="navbar bg-base-100 shadow-sm">
+    <div class="navbar bg-base-100/70 backdrop-blur-md sticky top-0 z-50 border-b border-base-content/10 shadow-sm">
         <div class="flex-1">
             <a class="btn btn-ghost text-xl gap-2">
                 <img src="assets/spark.svg" alt="Scintilla logo" class="w-6 h-6" />
@@ -41,18 +41,22 @@
         </div>
     </div>
     <div class="flex flex-col justify-center items-center gap-8 grow w-full px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-24 max-w-4xl mx-auto">
-        <!-- Content -->
-        <h2 class="text-xl sm:text-2xl font-bold text-center max-w-full md:max-w-2xl text-base-content/90 leading-relaxed">
-            High-performance, hardware-accelerated Python and R packages for normalizing count
-            matrices from single-cell RNA-seq experiments
-        </h2>
-        <div class="flex flex-col sm:flex-row gap-4 items-center justify-center w-full max-w-md sm:max-w-none">
-            <button class="btn btn-md sm:btn-lg btn-neutral w-full sm:w-auto gap-2">
-                Docs for Python library <i class="bi bi-box-arrow-up-right"></i>
-            </button>
-            <button class="btn btn-md sm:btn-lg btn-neutral w-full sm:w-auto gap-2">
-                Docs for R package <i class="bi bi-box-arrow-up-right"></i>
-            </button>
+        <!-- Hero Card (Vanta BG, Title, and Buttons) -->
+        <div class="relative w-full overflow-hidden rounded-3xl p-8 sm:p-12 border border-base-content/10 bg-base-100/40 backdrop-blur-sm shadow-xl flex flex-col gap-6 items-start text-left">
+            <div id="vanta-bg" class="absolute inset-0 -z-10 w-full h-full pointer-events-none"></div>
+            
+            <h2 class="text-2xl sm:text-3xl font-bold max-w-2xl text-base-content/95 leading-relaxed">
+                High-performance, hardware-accelerated Python and R packages for normalizing count
+                matrices from single-cell RNA-seq experiments
+            </h2>
+            <div class="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center justify-start w-full sm:w-auto mt-2">
+                <button class="btn btn-md sm:btn-lg btn-neutral w-full sm:w-auto gap-2">
+                    Docs for Python library <i class="bi bi-box-arrow-up-right"></i>
+                </button>
+                <button class="btn btn-md sm:btn-lg btn-neutral w-full sm:w-auto gap-2">
+                    Docs for R package <i class="bi bi-box-arrow-up-right"></i>
+                </button>
+            </div>
         </div>
 
         <div class="tabs tabs-border w-full max-w-3xl mt-4">
@@ -100,6 +104,25 @@ devtools::install_github("saketlab/scintilla", subdir = "R")</pre>
             </a>
         </nav>
     </footer>
+
+    <!-- Vanta JS Background Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.cells.min.js"></script>
+    <script>
+        VANTA.CELLS({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            color1: 0xbd93f9,
+            color2: 0xff79c6,
+            size: 1.5,
+            speed: 1.0
+        });
+    </script>
 </body>
 
 </html>
