@@ -18,13 +18,46 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
-
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
 <style>
     * {
         font-family: "Lato", sans-serif;
+    }
+
+    pre.shell-snippet,
+    pre.shell-snippet * {
+        background:
+            linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)),
+            hsl(var(--b2));
+        border: 1px solid hsl(var(--bc) / 0.1);
+        color: hsl(var(--bc) / 0.88);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+    }
+
+    pre.shell-snippet .comment {
+        color: #76808c;
+    }
+
+    pre.shell-snippet .command {
+        color: #f2f4f8;
+    }
+
+    pre.shell-snippet .string {
+        color: #8ab4f8;
+    }
+
+    pre.shell-snippet .option {
+        color: #b89268;
+    }
+
+    pre.shell-snippet .path {
+        color: #a79bd1;
+    }
+
+    pre.shell-snippet .func {
+        color: #8ab8a5;
     }
 </style>
 
@@ -69,24 +102,24 @@
         <div class="tabs tabs-border w-full max-w-3xl mt-4">
             <input type="radio" name="my_tabs_2" class="tab" aria-label="Python" checked="checked" />
             <div class="tab-content">
-                <pre style="font-family: monospace;"
-                    class="w-full h-56 whitespace-pre bg-base-200 rounded-box p-4 overflow-x-auto text-xs sm:text-sm font-mono leading-relaxed"># Install with CUDA support:
-pip install "scintilla[cuda] @ git+https://github.com/saketlab/scintilla#subdirectory=python"
+                <pre
+                    class="shell-snippet w-full h-56 whitespace-pre rounded-box p-4 overflow-x-auto text-xs sm:text-sm font-mono leading-relaxed"><span class="comment"># Install with CUDA support:</span>
+<span class="command">pip</span> <span class="command">install</span> <span class="string">"scintilla[cuda] @ git+https://github.com/saketlab/scintilla#subdirectory=python"</span>
 
-# Or install for Apple Silicon (MLX):
-pip install "scintilla[mlx] @ git+https://github.com/saketlab/scintilla#subdirectory=python"
+<span class="comment"># Or install for Apple Silicon (MLX):</span>
+<span class="command">pip</span> <span class="command">install</span> <span class="string">"scintilla[mlx] @ git+https://github.com/saketlab/scintilla#subdirectory=python"</span>
 
-# Or CPU-only:
-pip install git+https://github.com/saketlab/scintilla#subdirectory=python</pre>
+<span class="comment"># Or CPU-only:</span>
+<span class="command">pip</span> <span class="command">install</span> <span class="path">git+https://github.com/saketlab/scintilla#subdirectory=python</span></pre>
             </div>
             <input type="radio" name="my_tabs_2" class="tab" aria-label="R" />
             <div class="tab-content">
-                <pre style="font-family: monospace;"
-                    class="w-full h-56 whitespace-pre bg-base-200 rounded-box p-4 overflow-x-auto text-xs sm:text-sm font-mono leading-relaxed"># Install devtools if not already installed
-if (!requireNamespace("devtools", quietly = TRUE)) install.packages("devtools")
+                <pre
+                    class="shell-snippet w-full h-56 whitespace-pre rounded-box p-4 overflow-x-auto text-xs sm:text-sm font-mono leading-relaxed"><span class="comment"># Install devtools if not already installed</span>
+<span class="command">if</span> (<span class="command">!</span><span class="func">requireNamespace</span>(<span class="string">"devtools"</span>, <span class="command">quietly</span> = <span class="command">TRUE</span>)) <span class="func">install.packages</span>(<span class="string">"devtools"</span>)
 
-# Install the R package
-devtools::install_github("saketlab/scintilla", subdir = "R")</pre>
+<span class="comment"># Install the R package</span>
+<span class="func">devtools::install_github</span>(<span class="string">"saketlab/scintilla"</span>, <span class="command">subdir</span> = <span class="string">"R"</span>)</pre>
             </div>
 
         </div>
